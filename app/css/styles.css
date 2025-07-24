@@ -1,0 +1,132 @@
+/* Reset some default styles */
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: var(--background-color);
+}
+
+/* Global style variables */
+:root {
+    --primary-color: #cabac8;  /* Thistle */
+    --secondary-color: #49c6e5;  /* Vivid sky */
+    --accent-color: #258ea6;  /* Blue */
+    --text-color: #504746;  /* Wenge */
+    --background-color: #b5bd89;  /* Sage */
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    z-index: 1000;
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Header image */
+.profile-img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Section styling */
+section {
+    padding: 20px;
+    margin-top: 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--text-color);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Content layout */
+.content-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Columns for layout */
+.column-narrow,
+.column-wide {
+    width: 100%;
+}
+
+/* Media Queries */
+
+/* Medium Screens (Tablets) */
+@media (min-width: 600px) {
+    .content-wrap {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .column-narrow {
+        flex: 1;
+        max-width: 200px;
+    }
+
+    .column-wide {
+        flex: 2;
+        padding-left: 1rem;
+    }
+
+    .profile-img {
+        margin: 0;
+    }
+}
+
+/* Large Screens (Desktops) */
+@media (min-width: 992px) {
+    .content-wrap {
+        max-width: 1100px;
+        padding: 2rem;
+    }
+
+    .navbar {
+        justify-content: flex-start;
+        padding: 1rem 2rem;
+    }
+
+    .navbar a {
+        margin-right: 1rem;
+    }
+}
